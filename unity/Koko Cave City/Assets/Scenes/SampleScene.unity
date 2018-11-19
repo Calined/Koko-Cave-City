@@ -504,6 +504,10 @@ Prefab:
       propertyPath: m_ReflectionProbeUsage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 501887e4477b8db4498ac928b3b64565, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501887e4477b8db4498ac928b3b64565, type: 3}
   m_IsPrefabAsset: 0
@@ -520,6 +524,7 @@ GameObject:
   - component: {fileID: 534669906}
   - component: {fileID: 534669908}
   - component: {fileID: 534669907}
+  - component: {fileID: 534669909}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -625,6 +630,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9ea868bf673cb4faff687ea5bef50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &534669909
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &755966291
 Prefab:
   m_ObjectHideFlags: 0
