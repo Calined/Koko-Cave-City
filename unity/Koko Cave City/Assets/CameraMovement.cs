@@ -14,7 +14,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody>().AddForce(transform.forward * Time.deltaTime);
-
+        //if mouse of finger holds
+        if (Input.GetMouseButton(0))
+        {
+            //move forward
+            GetComponent<Rigidbody>().AddForce(transform.forward * 2 * Time.deltaTime);
+        }
     }
 }
