@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    private bool holding = false;
+    private Vector2 mouseStartPosition;
 
     // Use this for initialization
     void Start()
@@ -52,11 +54,29 @@ public class CameraMovement : MonoBehaviour
     {
         GetComponent<Rigidbody>().AddForce(Vector3.up * 49.5f * Time.deltaTime);
 
-        //if mouse of finger holds
+        //if mouse or finger holds
         if (Input.GetMouseButton(0))
         {
+            //just started holding
+            if (holding == false)
+            {
+                holding = true;
+                mouseStartPosition = Input.mousePosition;
+            }
+
             //move forward
             GetComponent<Rigidbody>().AddForce(transform.forward * 2 * Time.deltaTime);
+
+            //see if there is also sidewards movement
+            GetComponent<Rigidbody>().AddTorque((Input.mousePosition.x - mouseStartPosition.x) * transform.up * 20 * Time.deltaTime);
+
+            //see if there is also upwards/downwards movement
+            // GetComponent<Rigidbody>().AddForce();
+        }
+        else
+        {
+            //not holding anymore
+            holding = false;
         }
 
     }
