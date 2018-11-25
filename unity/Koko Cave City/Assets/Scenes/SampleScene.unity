@@ -113,6 +113,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16578266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16578267}
+  m_Layer: 0
+  m_Name: CameraGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &16578267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16578266}
+  m_LocalRotation: {x: -0.09728749, y: 0.6781491, z: -0.091288224, w: -0.72271395}
+  m_LocalPosition: {x: 3.1299927, y: 0.27550656, z: 0.13871655}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 534669905}
+  - {fileID: 2018357316}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &146277891
 Prefab:
   m_ObjectHideFlags: 0
@@ -740,6 +770,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6400008, guid: 501887e4477b8db4498ac928b3b64565, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501887e4477b8db4498ac928b3b64565, type: 3}
   m_IsPrefabAsset: 0
@@ -883,11 +917,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.09728749, y: 0.6781491, z: -0.091288224, w: -0.72271395}
-  m_LocalPosition: {x: 3.1299927, y: 0.27550656, z: 0.13871655}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 16578267}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &534669906
@@ -1480,13 +1514,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2018357315}
-  m_LocalRotation: {x: -0.09728749, y: 0.6781491, z: -0.091288224, w: -0.72271395}
-  m_LocalPosition: {x: 3.143, y: 0.229, z: 0.138}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00011165376, y: -0.04829572, z: -0.00026469864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 523441694}
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 16578267}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2018357317
 Rigidbody:

@@ -11,37 +11,44 @@ public class CameraMovement : MonoBehaviour
 
     }
 
-    private float stayCount = 0.0f;
-    private void OnCollisionStay(Collision collision)
+
+    void pushRay(Vector3 directionAndLength)
     {
-        //if time is up
-        if (stayCount > 1f)
+        directionAndLength *= 0.4f;
+
+        RaycastHit hitInfo;
+        bool gotHit = Physics.Raycast(transform.position, directionAndLength, out hitInfo, Vector3.Distance(Vector3.zero, directionAndLength));
+
+        if (gotHit)
         {
 
-            foreach (ContactPoint contact in collision.contacts)
-            {
-                Debug.Log("drawing");
-                Debug.DrawRay(contact.point, contact.normal, Color.white);
+            Debug.DrawRay(transform.position, hitInfo.point - transform.position, Color.red);
 
-                //apply force away from the collision point
-                GetComponent<Rigidbody>().AddForce(Vector3.Normalize(transform.position - contact.point) * 5f * Time.deltaTime / Vector3.Distance(transform.position, contact.point));
+            GetComponent<Rigidbody>().AddForce(-(directionAndLength - (hitInfo.point - transform.position)) * 5f * Time.deltaTime);
 
-            }
+            Debug.Log(hitInfo.collider.name);
 
-
-            //reset
-            stayCount -= 1f;
         }
         else
         {
-            stayCount += Time.deltaTime;
+            Debug.DrawRay(transform.position, directionAndLength, Color.white);
         }
+    }
 
+    void randomPushRayCasts(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            pushRay(Vector3.Normalize(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f))));
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //draw rays in all directions
+        randomPushRayCasts(5);
+
 
 
     }
@@ -52,8 +59,6 @@ public class CameraMovement : MonoBehaviour
     {
         //anti gravity
         GetComponent<Rigidbody>().AddForce(Vector3.up * 49.5f * Time.deltaTime);
-
-
 
         //if mouse or finger holds
         if (Input.GetMouseButton(0))
