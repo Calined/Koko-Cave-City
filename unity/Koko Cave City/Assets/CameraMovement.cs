@@ -50,7 +50,10 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //anti gravity
         GetComponent<Rigidbody>().AddForce(Vector3.up * 49.5f * Time.deltaTime);
+
+
 
         //if mouse or finger holds
         if (Input.GetMouseButton(0))
@@ -64,6 +67,12 @@ public class CameraMovement : MonoBehaviour
 
             //see if there is also upwards/downwards movement
             GetComponent<Rigidbody>().AddTorque(Input.GetAxis("Mouse Y") * -transform.right * 20);
+        }
+        else
+        {
+            //reduce rotation energy
+            GetComponent<Rigidbody>().AddTorque(-GetComponent<Rigidbody>().angularVelocity * 0.5f);
+
         }
 
 
