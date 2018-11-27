@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class CamTarget : MonoBehaviour
 {
-    IEnumerator FindNewPositionAndRotation(float secondsBetweenFinds)
+    IEnumerator FindNewPosition(float secondsBetweenFinds)
     {
         transform.position = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        transform.Rotate(new Vector3(Random.Range(-180f, 180f), Random.Range(-180f, 180f), Random.Range(-180f, 180f)));
 
         yield return new WaitForSeconds(secondsBetweenFinds);
-        StartCoroutine(FindNewPositionAndRotation(secondsBetweenFinds));
+        StartCoroutine(FindNewPosition(secondsBetweenFinds));
     }
 
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(FindNewPositionAndRotation(100f));
+        StartCoroutine(FindNewPosition(20f));
     }
 
     // Update is called once per frame
