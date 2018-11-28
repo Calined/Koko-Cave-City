@@ -35,3 +35,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+unity/Koko Cave City/Library/ShaderCache.db
+unity/Koko Cave City/Library/CurrentLayout.dwlt
+unity/Koko Cave City/Library/shadercompiler-UnityShaderCompiler.exe0.log
+unity/Koko Cave City/Library/assetDatabase3
