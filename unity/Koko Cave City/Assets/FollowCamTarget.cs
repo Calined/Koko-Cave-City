@@ -22,7 +22,7 @@ public class FollowCamTarget : MonoBehaviour
             //position
             if (Vector3.Distance(transform.position, camPositionTarget.position) > 1f)
             {
-                GetComponent<Rigidbody>().AddForce((camPositionTarget.position - transform.position) * 2 * Time.deltaTime);
+                GetComponent<Rigidbody>().AddForce(Vector3.Normalize((camPositionTarget.position - transform.position)) * 2f * Time.deltaTime);
             }
 
             //look at
@@ -36,7 +36,7 @@ public class FollowCamTarget : MonoBehaviour
             Vector3 cross = Vector3.Cross(transform.forward, targetDelta);
 
             // apply torque along that axis according to the magnitude of the angle.
-            GetComponent<Rigidbody>().AddTorque(cross * angleDiff * 1f);
+            GetComponent<Rigidbody>().AddTorque((cross * angleDiff) * 0.5f);
 
         }
     }

@@ -1075,6 +1075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc7ea01769d784428f278acfbea90d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intervalSeconds: 10
+  delaySeconds: 0
 --- !u!1001 &1096924580
 Prefab:
   m_ObjectHideFlags: 0
@@ -1485,6 +1487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc7ea01769d784428f278acfbea90d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intervalSeconds: 10
+  delaySeconds: 5
 --- !u!4 &1690989053
 Transform:
   m_ObjectHideFlags: 0

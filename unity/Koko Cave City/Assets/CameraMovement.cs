@@ -65,13 +65,13 @@ public class CameraMovement : MonoBehaviour
         {
 
             //move forward
-            GetComponent<Rigidbody>().AddForce(transform.forward * 2 * Time.deltaTime);
+            GetComponent<Rigidbody>().AddForce(transform.forward * 2f * Time.deltaTime);
 
             //see if there is also sidewards movement
-            GetComponent<Rigidbody>().AddTorque(Input.GetAxis("Mouse X") * transform.up * 20);
+            GetComponent<Rigidbody>().AddTorque(Input.GetAxis("Mouse X") * transform.up * 20f);
 
             //see if there is also upwards/downwards movement
-            GetComponent<Rigidbody>().AddTorque(Input.GetAxis("Mouse Y") * -transform.right * 20);
+            GetComponent<Rigidbody>().AddTorque(Input.GetAxis("Mouse Y") * -transform.right * 20f);
         }
         else
         {
